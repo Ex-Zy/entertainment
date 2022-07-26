@@ -9,9 +9,9 @@ export const useMoviesStore = defineStore({
   }),
   actions: {
     async fetchMovies() {
-      const data = await MoviesApi.getAll();
+      const movies = await MoviesApi.getAll();
 
-      this.movies = data;
+      this.movies = movies;
     },
   },
 });
