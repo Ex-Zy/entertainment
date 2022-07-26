@@ -1,13 +1,13 @@
 <template>
   <section
-    class="flex flex-col min-h-screen antialiased bg-blue-dark text-white"
+    class="flex flex-col lg:flex-row h-screen antialiased bg-blue-dark text-white"
   >
     <aside
-      class="flex items-center justify-between h-[56px] sm:px-4 md:px-6 bg-blue-default"
+      class="flex items-center justify-between h-[56px] md:h-[72px] md:m-6 md:rounded-lg shrink-0 px-4 md:px-6 lg:h-auto lg:flex-col lg:sticky lg:top-0 bg-blue-default lg:rounded-[20px] lg:m-8 lg:py-8 relative"
     >
       <slot name="navbar">Default navigation content</slot>
     </aside>
-    <main class="grow">
+    <main class="grow p-6 lg:my-8 overflow-auto">
       <slot name="header" />
       <slot name="page">Default page content</slot>
     </main>

@@ -4,9 +4,8 @@ module.exports = {
   content: ["./public/index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      sm: "320px",
       md: "768px",
-      lg: "1440px",
+      lg: "1024px",
     },
     colors: {
       red: "#FC4747",
