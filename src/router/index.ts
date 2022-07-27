@@ -1,7 +1,7 @@
 import BookmarksPage from "@/components/pages/BookmarksPage.vue";
 import MoviesPage from "@/components/pages/MoviesPage.vue";
 import SeriesPage from "@/components/pages/SeriesPage.vue";
-import TrendsPage from "@/components/pages/TrendsPage.vue";
+import HomePage from "@/components/pages/HomePage.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -9,14 +9,14 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      component: TrendsPage,
+      component: HomePage,
     },
     {
       path: "/movies",
       component: MoviesPage,
     },
     {
-      path: "/series",
+      path: "/tv-series",
       component: SeriesPage,
     },
     {

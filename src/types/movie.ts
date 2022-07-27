@@ -7,9 +7,6 @@ interface IThumbnailRegular extends IThumbnailTrending {
   medium: string;
 }
 
-type Category = "Movie" | "TV series";
-type Rating = "PG" | "E" | "18+";
-
 interface IMovie {
   id: number;
   title: string;
@@ -18,8 +15,8 @@ interface IMovie {
     regular: IThumbnailRegular;
   };
   year: number;
-  category: Category;
-  rating: Rating;
+  category: "Movie" | "TV series";
+  rating: "PG" | "E" | "18+";
   isBookmarked: boolean;
   isTrending: boolean;
 }

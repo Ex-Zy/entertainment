@@ -9,7 +9,7 @@ import TheLogo from "./TheLogo.vue";
   <MenuList>
     <MenuItem iconName="nav-home" to="/" />
     <MenuItem iconName="nav-movies" to="/movies" />
-    <MenuItem iconName="nav-tv-series" to="/series" />
+    <MenuItem iconName="nav-tv-series" to="/tv-series" />
     <MenuItem iconName="nav-bookmark" to="/bookmarks" />
   </MenuList>
   <TheUser />
