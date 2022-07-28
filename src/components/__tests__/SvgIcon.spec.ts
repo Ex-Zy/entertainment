@@ -9,18 +9,29 @@ describe("SvgIcon", () => {
 
     expect(wrapper.html()).toContain('href="#icon-nav-home"');
   });
-  it("check color prop", () => {
+  it("props", () => {
+    const wrapper = mount(SvgIcon, {
+      props: { name: "nav-home", color: "red", iconClasses: ["cl-1", "cl-2"] },
+    });
+
+    expect(wrapper.props()).toStrictEqual({
+      name: "nav-home",
+      color: "red",
+      iconClasses: ["cl-1", "cl-2"],
+    });
+  });
+  it("render with color prop", () => {
     const wrapper = mount(SvgIcon, {
       props: { name: "nav-home", color: "red" },
     });
 
     expect(wrapper.html()).toContain('fill="red"');
   });
-  it("check iconClasses prop", () => {
+  it("render with iconClasses prop", () => {
     const wrapper = mount(SvgIcon, {
       props: { name: "nav-home", iconClasses: ["cl-1", "cl-2"] },
     });
 
-    expect(wrapper.html()).toContain('class="cl-1 cl-23"');
+    expect(wrapper.classes()).toStrictEqual(["cl-1", "cl-2"]);
   });
 });
