@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="flex flex-col lg:flex-row h-screen antialiased bg-blue-dark text-white"
-  >
+  <section class="flex max-w-[1440px] m-auto flex-col lg:flex-row h-screen">
     <aside
       class="flex items-center justify-between h-[56px] md:h-[72px] md:m-6 md:rounded-lg shrink-0 px-4 md:px-6 lg:h-auto lg:flex-col lg:sticky lg:top-0 bg-blue-default lg:rounded-[20px] lg:m-8 lg:py-8 relative"
     >

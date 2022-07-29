@@ -9,9 +9,9 @@ const { movies, tvTrends } = useMovies();
 <template>
   <div class="mt-8">
     <h2 class="text-2lg mb-6">Trends Page</h2>
-    <div class="flex gap-4 col overflow-auto">
+    <div class="flex gap-4 overflow-auto">
       <MovieCard
-        class="w-[240px] md:w-[470px] shrink-0 grow-0 h-[140px]"
+        medium-size
         :movie="movie"
         v-for="movie of tvTrends"
         :key="movie.id"

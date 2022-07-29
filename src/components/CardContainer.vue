@@ -1,7 +1,6 @@
 <template>
   <div
-    class="grid gap-4 md:gap-7"
-    style="grid-template-columns: repeat(auto-fill, minmax(164px, 1fr))"
+    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[60px] gap-x-4 md:gap-y-[76px] md:gap-x-7 lg:gap-y-[84px] lg:gap-x-10"
   >
     <slot />
   </div>
