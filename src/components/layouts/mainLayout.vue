@@ -6,7 +6,6 @@
       <slot name="navbar">Default navigation content</slot>
     </aside>
     <main class="grow p-4 md:p-6 lg:my-8 overflow-auto">
-      <slot name="header" />
       <slot name="page">Default page content</slot>
     </main>
   </section>

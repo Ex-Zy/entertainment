@@ -13,7 +13,8 @@ defineProps<{
 <template>
   <div class="mb-10">
     <h2 class="text-2lg mb-6">{{ title }}</h2>
-    <CardContainer :layout="layout || 'vertical'">
+    <div v-if="!movies.length" class="text-2xl mt-[-1rem]">No movies for display</div>
+    <CardContainer v-else :layout="layout || 'vertical'">
       <MovieCard
         v-for="movie of movies"
         :key="movie.id"

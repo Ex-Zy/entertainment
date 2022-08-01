@@ -1,18 +1,38 @@
 <script setup lang="ts">
 import { useMoviesStore } from "@/stores/movies.store";
-import { computed } from "vue";
+import type IMovie from "@/types/movie";
+import { computed, ref } from "vue";
 import MoviesView from "../MoviesView.vue";
 
 const store = useMoviesStore();
-const tvMoviesBoorkmark = computed(() =>
+const searchValue = ref("");
+const foundMovies = computed<IMovie[]>(() => {
+  if (searchValue.value.trim().length) {
+    return store.movies.filter(({ title }) =>
+      title.toLocaleLowerCase().includes(searchValue.value.toLocaleLowerCase())
+    );
+  }
+
+  return [];
+});
+const tvMoviesBoorkmark = computed<IMovie[]>(() =>
   store.movies.filter((m) => m.category === "Movie" && m.isBookmarked)
 );
-const tvSeriesBoorkmark = computed(() =>
+const tvSeriesBoorkmark = computed<IMovie[]>(() =>
   store.movies.filter((m) => m.category === "TV series" && m.isBookmarked)
 );
+const handleSearch = (val: string) => (searchValue.value = val);
 </script>
 
 <template>
-  <MoviesView title="Bookmarked Movies" :movies="tvMoviesBoorkmark" />
-  <MoviesView title="Bookmarked TV Series" :movies="tvSeriesBoorkmark" />
+  <SearchMovies @search="handleSearch" />
+  <MoviesView
+    v-if="searchValue.length"
+    :title="`Found ${foundMovies.length} results for ‘${searchValue}’`"
+    :movies="foundMovies"
+  />
+  <template v-else>
+    <MoviesView title="Bookmarked Movies" :movies="tvMoviesBoorkmark" />
+    <MoviesView title="Bookmarked TV Series" :movies="tvSeriesBoorkmark" />
+  </template>
 </template>
