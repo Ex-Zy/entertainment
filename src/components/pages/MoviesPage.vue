@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import MovieCard from "../MovieCard.vue";
-import CardContainer from "../CardContainer.vue";
 import { useMoviesStore } from "@/stores/movies.store";
 import { computed } from "vue";
+import MoviesView from "../MoviesView.vue";
 
 const store = useMoviesStore();
 const tvMovies = computed(() =>
@@ -11,10 +10,5 @@ const tvMovies = computed(() =>
 </script>
 
 <template>
-  <div class="mt-8">
-    <h2 class="text-2lg mb-6">Movies</h2>
-    <CardContainer>
-      <MovieCard :movie="movie" v-for="movie of tvMovies" :key="movie.id" />
-    </CardContainer>
-  </div>
+  <MoviesView title="Movies" :movies="tvMovies" />
 </template>

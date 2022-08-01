@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import MovieCard from "../MovieCard.vue";
-import CardContainer from "../CardContainer.vue";
 import { useMoviesStore } from "@/stores/movies.store";
 import { computed } from "vue";
+import MoviesView from "../MoviesView.vue";
 
 const store = useMoviesStore();
 const tvMoviesBoorkmark = computed(() =>
@@ -14,24 +13,6 @@ const tvSeriesBoorkmark = computed(() =>
 </script>
 
 <template>
-  <div class="mt-8">
-    <h2 class="text-2lg font-light mb-6">Bookmarked Movies</h2>
-    <CardContainer>
-      <MovieCard
-        :movie="movie"
-        v-for="movie of tvMoviesBoorkmark"
-        :key="movie.id"
-      />
-    </CardContainer>
-  </div>
-  <div class="mt-10">
-    <h2 class="text-2lg font-light mb-6">Bookmarked TV Series</h2>
-    <CardContainer>
-      <MovieCard
-        :movie="movie"
-        v-for="movie of tvSeriesBoorkmark"
-        :key="movie.id"
-      />
-    </CardContainer>
-  </div>
+  <MoviesView title="Bookmarked Movies" :movies="tvMoviesBoorkmark" />
+  <MoviesView title="Bookmarked TV Series" :movies="tvSeriesBoorkmark" />
 </template>
