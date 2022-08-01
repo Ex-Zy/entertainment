@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import useMovies from "@/use/useMovies";
 import MovieCard from "../MovieCard.vue";
 import CardContainer from "../CardContainer.vue";
+import { useMoviesStore } from "@/stores/movies.store";
+import { computed } from "vue";
 
-const { tvSeries } = useMovies();
+const store = useMoviesStore();
+const tvSeries = computed(() =>
+  store.movies.filter((m) => m.category === "TV series")
+);
 </script>
 
 <template>

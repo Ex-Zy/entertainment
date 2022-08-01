@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import useMovies from "@/use/useMovies";
 import MovieCard from "../MovieCard.vue";
 import CardContainer from "../CardContainer.vue";
+import { useMoviesStore } from "@/stores/movies.store";
+import { computed } from "vue";
 
-const { movies, tvTrends } = useMovies();
+const store = useMoviesStore();
+const tvTrends = computed(() => store.movies.filter((m) => m.isTrending));
+const tvRecomends = computed(() =>
+  [...store.movies].sort((a, b) => b.year - a.year)
+);
 </script>
 
 <template>
@@ -21,7 +26,7 @@ const { movies, tvTrends } = useMovies();
   <div class="mt-10">
     <h2 class="text-2lg mb-6">Recommended for you</h2>
     <CardContainer>
-      <MovieCard :movie="movie" v-for="movie of movies" :key="movie.id" />
+      <MovieCard :movie="movie" v-for="movie of tvRecomends" :key="movie.id" />
     </CardContainer>
   </div>
 </template>
