@@ -7,8 +7,8 @@ const props = defineProps<{
 
 const classes = computed(() =>
   props.layout === "horizontal"
-    ? "flex gap-4 overflow-auto"
-    : "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[60px] gap-x-4 md:gap-y-[76px] md:gap-x-7 lg:gap-y-[84px] lg:gap-x-10"
+    ? "flex gap-4 md:gap-9 overflow-auto"
+    : "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-[20px] md:gap-x-7 lg:gap-y-[32px] lg:gap-x-10"
 );
 </script>
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MovieCard from "./MovieCard.vue";
+import MovieCard from "./card/MovieCard.vue";
 import CardContainer from "./CardContainer.vue";
 import type IMovie from "@/types/movie";
 
@@ -11,15 +11,21 @@ defineProps<{
 </script>
 
 <template>
-  <div class="mb-10">
-    <h2 class="text-2lg mb-6">{{ title }}</h2>
-    <div v-if="!movies.length" class="text-2xl mt-[-1rem]">No movies for display</div>
-    <CardContainer v-else :layout="layout || 'vertical'">
+  <div :class="{ 'mb-10': !layout }">
+    <h2 class="text-2lg md:text-2xl mb-4 lg:mb-8">{{ title }}</h2>
+    <div v-if="!movies.length" class="text-2xl mt-[-1rem] text-center">
+      No movies for display
+    </div>
+    <CardContainer
+      v-else
+      :layout="layout || 'vertical'"
+      :class="{ 'pb-6 md:pb-10': layout }"
+    >
       <MovieCard
         v-for="movie of movies"
         :key="movie.id"
-        :mediumSize="layout === 'horizontal'"
         :movie="movie"
+        :class="{ 'is-trending': layout === 'horizontal' }"
       />
     </CardContainer>
   </div>

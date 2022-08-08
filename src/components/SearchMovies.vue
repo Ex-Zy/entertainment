@@ -11,14 +11,14 @@ const handleInput = (e: Event) =>
 </script>
 
 <template>
-  <form @submit.prevent>
+  <form @submit.prevent class="mb-2">
     <div class="relative">
       <div
-        class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+        class="flex absolute inset-y-0 left-0 items-center pointer-events-none"
       >
         <svg
           aria-hidden="true"
-          class="w-6 h-6 stroke-white"
+          class="w-6 h-6 md:w-8 md:h-8 stroke-white"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -35,7 +35,7 @@ const handleInput = (e: Event) =>
       <input
         type="search"
         id="search"
-        class="block bg-blue-dark text-[1rem] opacity-50 focus:opacity-100 focus:placeholder:text-white p-4 pl-10 w-full text-sm text-white outline-none"
+        class="block bg-blue-dark text-[1rem] opacity-50 focus:opacity-100 focus:placeholder:text-white p-4 md:pl-14 pl-10 w-full text-sm md:text-xl text-white outline-none"
         placeholder="Search for movies or TV series"
         :value="value"
         @input="handleInput"

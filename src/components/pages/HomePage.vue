@@ -33,7 +33,7 @@ const handleSearch = (val: string) => (searchValue.value = val);
     :movies="foundMovies"
   />
   <template v-else>
-    <MoviesView title="Trends Page" :movies="tvTrends" layout="horizontal" />
+    <MoviesView title="Trending" :movies="tvTrends" layout="horizontal" />
     <MoviesView title="Recommended for you" :movies="tvRecomends" />
   </template>
 </template>

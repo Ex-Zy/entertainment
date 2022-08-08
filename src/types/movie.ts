@@ -11,7 +11,7 @@ interface IMovie {
   id: number;
   title: string;
   thumbnail: {
-    trending?: IThumbnailTrending;
+    trending: IThumbnailTrending;
     regular: IThumbnailRegular;
   };
   year: number;
