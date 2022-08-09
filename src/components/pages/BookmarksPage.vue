@@ -16,10 +16,14 @@ const foundMovies = computed<IMovie[]>(() => {
   return [];
 });
 const tvMoviesBoorkmark = computed<IMovie[]>(() =>
-  store.movies.filter((m) => m.category === "Movie" && m.isBookmarked)
+  store.movies.filter(
+    (m) => m.category.toLowerCase() === "movie" && m.isBookmarked
+  )
 );
 const tvSeriesBoorkmark = computed<IMovie[]>(() =>
-  store.movies.filter((m) => m.category === "TV series" && m.isBookmarked)
+  store.movies.filter(
+    (m) => m.category.toLowerCase() === "tv series" && m.isBookmarked
+  )
 );
 const handleSearch = (val: string) => (searchValue.value = val);
 </script>

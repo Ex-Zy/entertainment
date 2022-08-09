@@ -7,7 +7,7 @@ import MoviesView from "../MoviesView.vue";
 const store = useMoviesStore();
 const searchValue = ref("");
 const tvMovies = computed<IMovie[]>(() =>
-  store.movies.filter((m) => m.category === "Movie")
+  store.movies.filter((m) => m.category.toLowerCase() === "movie")
 );
 const foundMovies = computed<IMovie[]>(() => {
   if (searchValue.value.trim().length) {
