@@ -1,4 +1,3 @@
-import MoviesApi from "@/api/movies.api";
 import type IMovie from "@/types/movie";
 import { defineStore } from "pinia";
 
@@ -9,9 +8,9 @@ export const useMoviesStore = defineStore({
   }),
   actions: {
     async fetchMovies() {
-      const movies = await MoviesApi.getAll();
+      const { movies } = await import("../data/db.json");
 
-      this.movies = movies;
+      this.movies = <IMovie[]>movies;
     },
     setBookmarkMovie(id: number, isBorkmarked: boolean) {
       const movie = this.movies.find((m) => m.id === id);
