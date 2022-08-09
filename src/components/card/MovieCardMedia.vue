@@ -13,6 +13,10 @@ defineProps<{
   isBookmarked: boolean;
   title: string;
 }>();
+const emit = defineEmits<{
+  (e: "update:bookmark"): void;
+}>();
+const updateBookmark = () => emit("update:bookmark");
 </script>
 <template>
   <div class="card relative flex flex-col">
@@ -23,7 +27,7 @@ defineProps<{
         :poster="posterTranding"
       />
       <PosterRegular v-else :title="title" :poster="posterRegular" />
-      <BookmarkButton :isBookmarked="isBookmarked" />
+      <BookmarkButton :isBookmarked="isBookmarked" @click="updateBookmark" />
       <PlayButton />
     </div>
   </div>

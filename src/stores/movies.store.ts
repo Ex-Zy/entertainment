@@ -13,5 +13,12 @@ export const useMoviesStore = defineStore({
 
       this.movies = movies;
     },
+    setBookmarkMovie(id: number, isBorkmarked: boolean) {
+      const movie = this.movies.find((m) => m.id === id);
+
+      if (movie) {
+        movie.isBookmarked = isBorkmarked;
+      }
+    },
   },
 });

@@ -3,6 +3,10 @@ import type IMovie from "@/types/movie";
 import MovieCardDescription from "./MovieCardDescription.vue";
 import MovieCardMedia from "./MovieCardMedia.vue";
 import { computed } from "vue";
+import { useMoviesStore } from "@/stores/movies.store";
+
+const store = useMoviesStore();
+const { setBookmarkMovie } = store;
 
 const props = defineProps<{
   movie: IMovie;
@@ -23,6 +27,7 @@ const iconName = computed(() => {
       :title="movie.title"
       :posterRegular="movie.thumbnail.regular"
       :posterTranding="movie.thumbnail.trending"
+      @update:bookmark="setBookmarkMovie(movie.id, !movie.isBookmarked)"
     />
     <MovieCardDescription
       :year="movie.year"
