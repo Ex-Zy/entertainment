@@ -1,18 +1,12 @@
-interface IThumbnailTrending {
-  small: string;
-  large: string;
-}
-
-interface IThumbnailRegular extends IThumbnailTrending {
-  medium: string;
-}
+import type IPosterRegular from "./poster.regular";
+import type IPosterTrending from "./poster.trending";
 
 interface IMovie {
   id: number;
   title: string;
   thumbnail: {
-    trending: IThumbnailTrending;
-    regular: IThumbnailRegular;
+    trending: IPosterTrending;
+    regular: IPosterRegular;
   };
   year: number;
   category: "Movie" | "TV series";

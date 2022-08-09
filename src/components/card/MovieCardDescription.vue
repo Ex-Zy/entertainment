@@ -1,32 +1,26 @@
 <script setup lang="ts">
-import type IMovie from "@/types/movie";
-import { computed } from "vue";
-
-const props = defineProps<{
-  movie: IMovie;
+defineProps<{
+  year: number;
+  category: string;
+  rating: string;
+  title: string;
+  iconName: string;
 }>();
-
-const iconName = computed(() => {
-  return `category-${props.movie.category
-    .split(" ")
-    .join("-")
-    .toLocaleLowerCase()}`;
-});
 </script>
 <template>
   <div class="card__description">
     <ul
       class="flex gap-2 text-[11px] md:text-[13px] font-light items-center opacity-75"
     >
-      <li>{{ movie.year }}</li>
+      <li>{{ year }}</li>
       <li class="flex gap-2 items-center">
         <SvgIcon :name="iconName" class="w-3 h-3" />
-        {{ movie.category }}
+        {{ category }}
       </li>
-      <li>{{ movie.rating }}</li>
+      <li>{{ rating }}</li>
     </ul>
     <div class="card__title font-medium text-[14px] md:text-[18px]">
-      {{ movie.title }}
+      {{ title }}
     </div>
   </div>
 </template>

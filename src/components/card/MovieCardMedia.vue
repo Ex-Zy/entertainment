@@ -1,43 +1,25 @@
 <script setup lang="ts">
-import type IMovie from "@/types/movie";
+import type IPosterRegular from "@/types/poster.regular.js";
+import type IPosterTrending from "@/types/poster.trending.js";
+import PosterRegular from "./poster/PosterRegular.vue";
+import PosterTranding from "./poster/PosterTranding.vue";
 
 defineProps<{
-  movie: IMovie;
+  posterRegular: IPosterRegular;
+  posterTranding: IPosterTrending;
+  isTrending: boolean;
+  title: string;
 }>();
 </script>
 <template>
   <div class="card relative flex flex-col">
     <div class="card__media rounded-lg overflow-hidden relative">
-      <!--Trending picture-->
-      <template v-if="movie.isTrending">
-        <picture>
-          <source
-            media="(min-width: 768px)"
-            :srcset="movie.thumbnail.trending.large"
-          />
-          <img
-            :src="movie.thumbnail.trending.small"
-            :alt="`Poster ${movie.title}`"
-          />
-        </picture>
-      </template>
-      <!--Base picture-->
-      <template v-else>
-        <picture>
-          <source
-            media="(min-width: 768px)"
-            :srcset="movie.thumbnail.regular.medium"
-          />
-          <source
-            media="(min-width: 1024px)"
-            :srcset="movie.thumbnail.regular.large"
-          />
-          <img
-            :src="movie.thumbnail.regular.small"
-            :alt="`Poster ${movie.title}`"
-          />
-        </picture>
-      </template>
+      <PosterTranding
+        v-if="isTrending"
+        :title="title"
+        :poster="posterTranding"
+      />
+      <PosterRegular v-else :title="title" :poster="posterRegular" />
     </div>
   </div>
 </template>
