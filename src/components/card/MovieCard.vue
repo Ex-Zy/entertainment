@@ -2,7 +2,6 @@
 import type IMovie from "@/types/movie";
 import MovieCardDescription from "./MovieCardDescription.vue";
 import MovieCardMedia from "./MovieCardMedia.vue";
-import MovieCardBookmarkButton from "./MovieCardBookmarkButton.vue";
 import { computed } from "vue";
 
 const props = defineProps<{
@@ -20,6 +19,7 @@ const iconName = computed(() => {
   <div class="card relative flex flex-col">
     <MovieCardMedia
       :isTrending="movie.isTrending"
+      :isBookmarked="movie.isBookmarked"
       :title="movie.title"
       :posterRegular="movie.thumbnail.regular"
       :posterTranding="movie.thumbnail.trending"
@@ -31,11 +31,6 @@ const iconName = computed(() => {
       :title="movie.title"
       :iconName="iconName"
     />
-    <MovieCardBookmarkButton :isBookmarked="movie.isBookmarked" />
-    <!-- <button type="button" class="card__play absolute flex cursor-pointer">
-      <SvgIcon name="play" class="w-3 h-3 m-auto" />
-      <span class="text-md">Play</span>
-    </button> -->
   </div>
 </template>
 

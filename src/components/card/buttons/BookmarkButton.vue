@@ -6,7 +6,7 @@ defineProps<{
 <template>
   <button
     type="button"
-    class="card__bookmark absolute flex cursor-pointer stroke-white fill-white top-2 md:top-4 right-2 md:right-4 w-8 h-8 rounded-full bg-blue-dark bg-opacity-50 hover:fill-blue-dark hover:stroke-blue-dark hover:bg-white hover:bg-opacity-100 transition-all duration-100"
+    class="card__bookmark absolute z-10 flex cursor-pointer stroke-white fill-white top-2 md:top-4 right-2 md:right-4 w-8 h-8 rounded-full bg-blue-dark bg-opacity-50 hover:fill-blue-dark hover:stroke-blue-dark hover:bg-white hover:bg-opacity-100 transition-all duration-100"
   >
     <SvgIcon
       :name="isBookmarked ? 'bookmark-full' : 'bookmark-empty'"

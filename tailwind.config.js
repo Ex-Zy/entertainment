@@ -15,6 +15,7 @@ module.exports = {
         dark: "#10141E",
         light: "#5A698F",
       },
+      "white-025": "rgba(255, 255, 255, 0.25)",
     },
     fontFamily: {
       sans: ["Outfit", "sans-serif"],

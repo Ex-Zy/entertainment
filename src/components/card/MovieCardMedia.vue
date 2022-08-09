@@ -3,11 +3,14 @@ import type IPosterRegular from "@/types/poster.regular.js";
 import type IPosterTrending from "@/types/poster.trending.js";
 import PosterRegular from "./poster/PosterRegular.vue";
 import PosterTranding from "./poster/PosterTranding.vue";
+import PlayButton from "./buttons/PlayButton.vue";
+import BookmarkButton from "./buttons/BookmarkButton.vue";
 
 defineProps<{
   posterRegular: IPosterRegular;
   posterTranding: IPosterTrending;
   isTrending: boolean;
+  isBookmarked: boolean;
   title: string;
 }>();
 </script>
@@ -20,6 +23,8 @@ defineProps<{
         :poster="posterTranding"
       />
       <PosterRegular v-else :title="title" :poster="posterRegular" />
+      <BookmarkButton :isBookmarked="isBookmarked" />
+      <PlayButton />
     </div>
   </div>
 </template>
@@ -43,6 +48,9 @@ defineProps<{
     &:hover {
       &::after {
         opacity: 0.5;
+      }
+      .play-button {
+        opacity: 1;
       }
     }
     img {
