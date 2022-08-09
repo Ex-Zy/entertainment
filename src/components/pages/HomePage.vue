@@ -19,7 +19,7 @@ const tvTrends = computed<IMovie[]>(() =>
   store.movies.filter((m) => m.isTrending)
 );
 const tvRecomends = computed<IMovie[]>(() =>
-  [...store.movies].sort((a, b) => b.year - a.year)
+  store.movies.filter((m) => !m.isTrending)
 );
 
 const handleSearch = (val: string) => (searchValue.value = val);
