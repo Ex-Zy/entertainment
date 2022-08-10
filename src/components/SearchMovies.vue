@@ -35,7 +35,7 @@ const handleInput = (e: Event) =>
       <input
         type="search"
         id="search"
-        class="block bg-blue-dark text-[1rem] opacity-50 focus:opacity-100 focus:placeholder:text-white p-4 md:pl-14 pl-10 w-full text-sm md:text-xl text-white outline-none"
+        class="block bg-blue-dark text-[1rem] opacity-50 focus:opacity-100 focus:placeholder:text-white p-4 md:pl-14 pl-10 w-full md:text-xl text-white outline-none"
         placeholder="Search for movies or TV series"
         :value="value"
         @input="handleInput"

@@ -1,59 +1,58 @@
-# entertainment
+# Frontend Mentor - Entertainment web app solution
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a solution to the [Entertainment web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X). Frontend Mentor challenges help you improve your coding skills by building realistic project.
 
-## Recommended IDE Setup
+## Table of contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
-## Type Support for `.vue` Imports in TS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Overview
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### The challenge
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Users should be able to:
 
-## Customize configuration
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
+- Add/Remove bookmarks from all movies and TV series
+- Search for relevant shows on all pages
+- **Bonus**: Build this project as a full-stack application
+- **Bonus**: If you're building a full-stack app, we provide authentication screen (sign-up/login) designs if you'd like to create an auth flow
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Screenshot
 
-## Project Setup
+![](./screenshot.jpg)
 
-```sh
-npm install
-```
 
-### Compile and Hot-Reload for Development
+### Links
 
-```sh
-npm run dev
-```
+- Solution URL: [Github](https://github.com/Ex-Zy/entertainment)
+- Live Site URL: [GH-PAGES](https://ex-zy.github.io/entertainment)
 
-### Type-Check, Compile and Minify for Production
+## My process
 
-```sh
-npm run build
-```
+### Built with
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+- Mobile-first
+- Tailwind CSS
+- Semantic HTML5 markup
+- Flexbox
+- [Vite](https://vitejs.dev/) - development tool for modern web projects
+- [Vue 3](https://vuejs.org/) - JS framework
+- [Pinia](https://pinia.vuejs.org/) - Vue Store
+- [Vue Router](https://router.vuejs.org/) - Vue Router
+- [Styled Components](https://styled-components.com/) - For styles
 
-```sh
-npm run test:unit
-```
+## Author
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run build
-npm run test:e2e # or `npm run test:e2e:ci` for headless testing
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- Website - [Sergey Nagornykh](https://nagornykh.me/)
+- Github - [Ex-Zy](https://github.com/Ex-Zy)
+- Frontend Mentor - [@Ex-Zy](https://www.frontendmentor.io/profile/Ex-Zy)
