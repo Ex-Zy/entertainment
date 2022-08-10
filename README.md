@@ -49,7 +49,6 @@ Users should be able to:
 - [Vue 3](https://vuejs.org/) - JS framework
 - [Pinia](https://pinia.vuejs.org/) - Vue Store
 - [Vue Router](https://router.vuejs.org/) - Vue Router
-- [Styled Components](https://styled-components.com/) - For styles
 
 ## Author
 
