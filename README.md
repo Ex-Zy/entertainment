@@ -45,6 +45,8 @@ Users should be able to:
 - Tailwind CSS
 - Semantic HTML5 markup
 - Flexbox
+- Composition API
+- [Typescript](https://www.typescriptlang.org/) - strongly typed programming language that builds on JavaScript
 - [Vite](https://vitejs.dev/) - development tool for modern web projects
 - [Vue 3](https://vuejs.org/) - JS framework
 - [Pinia](https://pinia.vuejs.org/) - Vue Store
