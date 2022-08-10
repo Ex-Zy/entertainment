@@ -4,8 +4,12 @@ import { defineConfig } from "vite";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import vue from "@vitejs/plugin-vue";
 
+const isProduction = () => process.env.NODE_ENV === "production";
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  // Specifying "base" option is required for Github Pages
+  base: isProduction() ? "/entertainment/" : "/",
   plugins: [
     vue(),
     createSvgIconsPlugin({
